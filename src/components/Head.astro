@@ -13,17 +13,32 @@ const { title, description, image } = Astro.props
 
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width,initial-scale=1' />
-<link
-	rel='icon'
-	type='image/svg+xml'
-	href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>'
-/>
+
+<!-- Favicon & App Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+
+<!-- Android Web App Icons -->
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+
+
+<!-- Pro: Tells others you're using Astro, Cons: Can give away stack info to bots or malicious scanners,  In fact, most developers remove it for cleaner code or privacy reasons:-->
 <meta name='generator' content={Astro.generator} />
 
-<!-- Sitemap -->
-<link rel="sitemap" href=`${template.base}/sitemap-index.xml` />
+<!-- Tell search engines (like Google or Bing) where to find your sitemap, However, It's not widely used anymore by search engines.
+  Google recommends you submit your sitemap via Google Search Console instead but You still need @astrojs/sitemap to generate the file,
+then you submit that file (once) to Google Search Console.
+-->
+<link rel="sitemap" href={`${template.base}/sitemap-index.xml`} />
 
-<!-- Canonical URL -->
+<!-- Canonical URL: It tells search engines:
+“Hey Google, this is the original or preferred URL for this page.” -->
 <link rel='canonical' href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
@@ -36,14 +51,20 @@ const { title, description, image } = Astro.props
 <meta property='og:url' content={Astro.url} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-<meta property='og:image' content={new URL(image, Astro.url)} />
+<meta property='og:image' content={new URL(image, Astro.site)} />
+<meta property="og:image:alt" content="Solange Ormeno Portfolio Cover — Web Developer in Orlando, FL" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Solange Ormeno Portfolio" />
+<meta property="og:locale" content="en_US" />
+
 
 <!-- Twitter -->
 <meta property='twitter:card' content='summary_large_image' />
 <meta property='twitter:url' content={Astro.url} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
-<meta property='twitter:image' content={new URL(image, Astro.url)} />
+<meta property='twitter:image' content={new URL(image, Astro.site)} />
 
 <!-- Theme selector scripts -->
 <script is:inline>

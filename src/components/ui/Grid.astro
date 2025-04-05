@@ -1,20 +1,55 @@
 ---
+import { Image } from 'astro:assets'
+
 interface Props {
-  gridTitle: string;
-  gridItems: {
+  title: string;
+  freelanceWork: {
     title: string;
+    image: string;
     description: string;
   }[];
 }
 
-const {gridTitle, gridItems} = Astro.props;
+const {title, freelanceWork} = Astro.props;
 ---
-<h2 class="text-3xl font-bold mb-8">{gridTitle}</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  {gridItems.map((item) => (
-    <div class="p-6 rounded-lg text-base-content bg-base-200">
-      <h3 class="text-xl font-semibold mb-3">{item.title}</h3>
-      <p>{item.description}</p>
+<h2 class="text-3xl font-bold mb-8">{title}</h2>
+
+
+<!-- Masonry layout -->
+<div class="columns-1 md:columns-2  gap-6 space-y-4">
+  {freelanceWork.map((item) => (
+    <div class="break-inside-avoid">
+      <!-- Image Container -->
+      <div class="relative group overflow-hidden shadow-2xl cursor-pointer">
+        <Image
+          src={item.image}
+          alt={item.title}
+          class="w-full h-auto object-cover transition-transform duration-500 "
+        />
+
+        <!-- Overlay -->
+        <div class="absolute flex-col inset-0 z-10 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <h3 class="mt-2 text-xl font-light text-white p-2 mb-5">
+            {item.title}
+            </h3>
+            <button class="bg-white text-black px-5 py-2 rounded-md text-sm tracking-wide shadow hover:bg-stone-800 hover:text-white transition">
+            See Work
+          </button>
+        </div>
+      </div>
+
+  
     </div>
   ))}
 </div>
+
+
+
+
+{/* 
+  <div class="p-6 rounded-lg text-base-content bg-base-200">
+      <h3 class="text-xl font-semibold mb-3">{item.title}</h3>
+      <p>{item.description}</p>
+    </div>
+
+*/}

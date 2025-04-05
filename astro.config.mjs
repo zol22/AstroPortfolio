@@ -11,6 +11,6 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
     integrations: [react(), tailwind(), sitemap()],
-    site: template.website_url,
+    site: template.website_url, // Now it points to solangeormeno.dev
     base: template.base,
 });
