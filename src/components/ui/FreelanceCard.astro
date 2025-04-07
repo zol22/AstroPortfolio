@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  freelanceWork: {
+    id: string;
+    title: string;
+    image: ImageMetadata;
+    slug: string;
+    description: string;
+    url?: string;
+    fullInfo?: {
+      summary: string;
+      whatItDoes: string[];
+      howToUse: string[];
+      features: string[];
+      technologies: string[];
+    };
+  }[];
+}
+
+
+const { title, image, slug, description, url, fullInfo } = Astro.props;
+---
+
+<a
+  href={`/${slug}`}
+  class="relative block group cursor-pointer overflow-hidden bg-cover bg-center"
+>
+  <Image
+    src={image}
+    alt={title}
+    loading="lazy"
+    class="w-full h-full object-cover transition-transform duration-300 ease-in group-hover:scale-[105%]"
+    widths={[400, 800, 1200]}  // Astro will generate these sizes
+    sizes="(max-width: 768px) 100vw, 50vw"
+  />
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent z-10 pointer-events-none"></div>
+
+  <!-- Text Content -->
+  <div class="absolute bottom-0 w-full p-5 z-20">
+    <h3 class="text-xl  uppercase font-bold text-white">{title}</h3>
+
+    <!-- Slide-in description -->
+    <p
+      class="text-sm text-white mt-2 transform translate-y-full opacity-0 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100"
+    >
+      {description.slice(0, 80)}...
+    </p>
+  </div>
+</a>

@@ -3,17 +3,20 @@ import Layout from '../layouts/Layout.astro'
 
 import { profile} from '@/settings'
 import { freelanceWork } from '@/data/freelance'
+import FreelanceGallery from '@/components/freelance/FreelanceGallery.jsx'
 import { publications } from '@/data/cv'
 import ProfilePictures from '@/assets/images/profile_pictures.jpg'
+
 import Hero from '@/components/ui/Hero.astro'
-import Grid from '@/components/ui/Grid.astro'
+import Freelance from '@/components/ui/Freelance.astro'
 import ArticleList from '@/components/ui/ArticleList.astro'
 
 const { fullName, title, } = profile
 
 ---
 
-<Layout>
+<Layout title="Solange Ormeno | Web Developer & Portfolio"
+description="Hi! I'm Solange — a passionate freelance full-stack web developer building elegant websites and web apps using modern tools.">
 	<!-- Hero Section -->
 	<section class='flex items-center gap-12 border-b pb-12'>
 		<Hero
@@ -24,8 +27,9 @@ const { fullName, title, } = profile
 	</section>
 
 	<!-- Freelance Work -->
-	<section class='py-12 border-b'>
-		<Grid title='Freelance Work' freelanceWork={freelanceWork} />
+	<section class='py-12'>
+		<Freelance title='Freelance Work' freelanceWork={freelanceWork} />
+		
 	</section>
 
 	<!-- Recent Publications -->

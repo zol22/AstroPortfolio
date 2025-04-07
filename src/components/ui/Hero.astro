@@ -23,5 +23,11 @@ const {fullName, title, profilePicture, company} = Astro.props
     src={profilePicture}
     alt={fullName}
     class='w-full h-full mask mask-circle size-44'
+    loading='lazy'
+    widths={[400, 800, 1200]}  // Astro will generate these sizes
+    sizes="(max-width: 768px) 100vw, 50vw"
+
+
+
   />
 </div>

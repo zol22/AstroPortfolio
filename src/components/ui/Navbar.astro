@@ -19,6 +19,9 @@ const {fullName, title} = profile
 					class='mask mask-circle size-44'
 					src={ProfilePictures}
 					alt={`Profile picture of ${fullName}`}
+					loading='lazy'
+					widths={[400, 800, 1200]}  // Astro will generate these sizes
+    				sizes="(max-width: 768px) 100vw, 50vw"
 				/>
 				<h1 class="text-lg font-black mt-8 hidden lg:block">{title} <span>{fullName}</span></h1>
 			</div>
