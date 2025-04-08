@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  logo: string;
+}
+
+const { title, logo } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center mr-6 mb-2">
+  <i
+    class={`${logo} text-[26px] bg-clip-text text-transparent bg-gradient-to-t from-gray-700 via-gray-500 to-gray-300`}
+  ></i>
+  <span class="text-xs text-gray-600 mt-1 tracking-wide">{title}</span>
+</div>

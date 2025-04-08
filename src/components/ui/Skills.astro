@@ -1,0 +1,17 @@
+---
+import { skills } from '@/data/cv'
+import SkillCard from '@/components/ui/SkillCard.astro'
+
+const fullSkills = [...skills, ...skills]
+---
+
+
+<h2 class="text-3xl font-bold mb-8">Skills</h2>
+
+<div class="overflow-hidden whitespace-nowrap">
+  <div class="flex w-max animate-scroll-slow space-x-6">
+    {fullSkills.map((skill) => (
+      <SkillCard title={skill.title} logo={skill.logo} />
+    ))}
+  </div>
+</div>

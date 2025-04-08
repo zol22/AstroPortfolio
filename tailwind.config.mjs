@@ -2,7 +2,17 @@
 export default {
     content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     theme: {
-        extend: {},
+        extend: {
+            keyframes: {
+                scroll: {
+                    "0%": { transform: "translateX(0%)" },
+                    "100%": { transform: "translateX(-50%)" },
+                },
+            },
+            animation: {
+                'scroll-slow': "scroll 30s linear infinite",
+            },
+        },
     },
   
     plugins: [require("@tailwindcss/typography"), require("daisyui")],
