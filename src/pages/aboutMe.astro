@@ -1,15 +1,18 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import { experiences, education, skills, publications } from '../data/cv'
+import { profile} from '@/settings'
+
 import CvTimeline from '@/components/ui/CvTimeline.astro'
 
-import type { Experience, Education, Publication } from '../types/cv'
+import type { Experience, Education} from '../types/cv'
 import List from '@/components/ui/List.astro'
+import Skills from '@/components/ui/Skills.astro'
 import PublicationsList from '@/components/ui/PublicationsList.astro'
+const { fullName } = profile
 
 let orderdExperiences: Experience[] = []
 let orderdEducations: Education[] = []
-let orderedPublications: Publication[] = []
 
 const orderElement = <T extends { time: string }>(a: T, b: T) => {
   const presentValues = ['present', 'now', 'current', 'today']
@@ -38,18 +41,28 @@ if (education.length > 0) {
 	})
 }
 
-if (publications.length > 0) {
-	orderedPublications = publications.sort((a, b) => {
-		return orderElement(a, b)
-	})
-}
 ---
 
 <Layout>
+	<section class="mb-5">
+		<h1 class='text-4xl font-bold mb-4'>
+			Welcome! I'm <span class='text-secondary'>{fullName}</span>
+		</h1>
+
+		<p class='text-lg mb-10'>
+			I’m a full-stack developer who spends way too much time at my desk (in the best way). I’m always building, breaking, and learning — whether it’s a freelance project, a late-night idea, or just messing with new tools. If you're into creative collabs, building cool stuff, or talking dev over coffee, hit me up!			</p>
+
+		{
+			skills.length > 0 && (
+				<Skills />
+				)
+		}
+	</section>
+
 	{
 		orderdEducations.length > 0 && (
 			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
+				<h2 class='text-2xl font-bold mb-6 mt-6 border-b pb-2'>
 					Education
 				</h2>
 				<CvTimeline elements={orderdEducations} colored={true} />
@@ -68,22 +81,5 @@ if (publications.length > 0) {
 		)
 	}
 
-	{
-		orderdEducations.length > 0 && (
-			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Last publications
-				</h2>
-				<PublicationsList elements={orderedPublications}/>
-			</section>
-		)
-	}
 
-	{
-		skills.length > 0 && (
-			<section class='mb-12'>
-				<List listTitle='Skills' listItems={skills}/>
-			</section>
-		)
-	}
 </Layout>

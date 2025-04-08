@@ -2,35 +2,23 @@ export const experiences = [
 	{
 		company: 'Self Employed',
 		time: '2022 - Present',
-		title: 'Freelancer - Web Developer/ Web Designer',
+		title: 'Freelancer - Web Developer& Designer',
 		location: 'Remote',
-		description: `
-		Delivered responsive web development projects using HTML5, CSS3, JavaScript, React.js and third-party APIs.
-		Designed wireframes and prototypes to enhance collaboration and project clarity.
- 		Optimized databases (MySQL, MongoDB).
- 		Utilized object-oriented programming (OOP) principles to build scalable and maintainable code.`,
+		description: `Designed and built websites for small businesses using Squarespace, Wix, and custom code.`,
 	},
 	{
 	 	company: 'Capco',
 	 	time: '2022 - 2024',
 	 	title: ' Quality Assurance Analyst/ QA Tester',
 	 	location: 'Matiland, FL / Remote',
-	 	description: `Managed risks and aligned strategies with client goals for Wells Fargo, Commerce Bank and HSBC Bank.
-▪ Developed and tested 70+ user stories for HSBC's "Buy Now, Pay Later" feature, reducing bugs by 25%.
-▪ Analyzed data using Excel to drive process improvements and optimization.
-▪ Collaborated with developers and clients to ensure timely feature delivery and issue resolution.
-▪ Tested web and mobile applications, providing feedback to developers and UX teams to meet client
-expectations and enhance user experience.
-▪ Utilized Jira and Postman in an agile environment to maintain quality assurance best practices.`,
+	 	description: `Tested and delivered fintech web/mobile features for HSBC, Wells Fargo, and Commerce Bank.`,
 	},
 	{
 		company: 'Yofimed',
 		time: '2020',
 		title: 'QUX/UI Designer',
 		location: 'Manhattan, NY',
-		description: `Designed and prototyped an iOS app to connect users with aesthetic medical providers.
-▪ Improved user flow and reduced drop-off by 30% through intuitive UI design in Adobe XD
-▪ Collaborated with developers to ensure seamless design implementation.`
+		description: `Designed an iOS app for medical providers, improving user flow and engagement.`
 	}
 	
 ];
@@ -38,10 +26,10 @@ expectations and enhance user experience.
 export const education = [
 	{
 		school: 'New Jersey Institute of Technology',
-		time: '2016-2019',
+		time: '2016 - 2019',
 		degree: 'Bachelor of Information Technology',
 		location: 'Newark, NJ',
-		description: 'Minor in Computer Science. Graduated with honors.',
+		description: 'Minor in Computer Science',
 	},
 	 {
 		school: 'Passaic County Community College',
