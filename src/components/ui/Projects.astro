@@ -1,0 +1,44 @@
+---
+import ProjectCard from '@/components/ui/ProjectCard.astro';
+
+interface Props {
+  title: string;
+  projects: {
+    id: string;
+    title: string;
+    image: ImageMetadata;
+    slug: string;
+    description: string;
+    url?: string;
+    date: string;
+    landingPageImage?: ImageMetadata;
+    github?: string;
+    gallery?: ImageMetadata[];
+    fullInfo?: {
+      features: string[];
+      whatItDoes: string[];
+      technologies: string[];
+    };
+  }[];
+}
+
+
+const { title, projects } = Astro.props;
+
+const sortedProjects = [...projects].sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  return dateB - dateA; // Sort in descending order
+});
+---
+<h2 class="text-2xl font-bold mb-10 mt-2 border-b pb-2">{title}</h2>
+
+<div>
+  <div class="columns-1 md:columns-2 gap-6 space-y-10">
+    {sortedProjects.map((card) => (
+        <ProjectCard  title={card.title} image={card.image} slug={card.slug} description={card.description}
+        url={card.url} date={card.date} landingPageImage={card.landingPageImage} github={card.github} gallery={card.gallery} fullInfo={card.fullInfo} key={card.id}
+        />
+    ))}
+  </div>
+</div>

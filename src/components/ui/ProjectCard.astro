@@ -1,31 +1,34 @@
 ---
 import { Image } from 'astro:assets';
 
+
 interface Props {
   title: string;
-  freelanceWork: {
+  projects: {
     id: string;
     title: string;
     image: ImageMetadata;
     slug: string;
     description: string;
     url?: string;
+    date: string;
+    landingPageImage?: ImageMetadata;
+    github?: string;
+    gallery?: ImageMetadata[];
     fullInfo?: {
-      summary: string;
-      whatItDoes: string[];
-      howToUse: string[];
       features: string[];
+      whatItDoes: string[];
       technologies: string[];
     };
   }[];
 }
 
-
-const { title, image, slug, description, url, fullInfo } = Astro.props;
+const { title, image, slug, description, url, date, landingPageImage, github, gallery, fullInfo } = Astro.props;
 ---
 
+
 <a
-  href={`/${slug}`}
+  href={`/projects/${slug}`}
   class="relative block group cursor-pointer overflow-hidden bg-cover bg-center"
 >
   <Image

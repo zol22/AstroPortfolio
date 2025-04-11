@@ -1,0 +1,23 @@
+---
+import animatedSol from '@/assets/images/animatedSol.png';
+import { Image } from 'astro:assets';
+
+
+---
+
+<div class="relative w-40 md:w-56 lg:w-64 eye-tracker">
+  <Image  
+    src={animatedSol}
+    alt="Cute character"
+    class="w-full h-auto"
+    loading="lazy"
+    width={300}
+  />
+  <!-- Eyes (position over image based on your image layout) -->
+  <div class="eye-ball" style="left: 42%; top: 28%;">
+    <div class="pupil"></div>
+  </div>
+  <div class="eye-ball" style="left: 53%; top: 28%;">
+    <div class="pupil"></div>
+  </div>
+</div>

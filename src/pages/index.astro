@@ -2,15 +2,12 @@
 import Layout from '../layouts/Layout.astro'
 
 import { profile} from '@/settings'
-import { freelanceWork } from '@/data/freelance'
-import FreelanceGallery from '@/components/freelance/FreelanceGallery.jsx'
-import { publications } from '@/data/cv'
+import {projects} from '@/data/projects'
 import ProfilePictures from '@/assets/images/profile_pictures.jpg'
 
 import Hero from '@/components/ui/Hero.astro'
-import Freelance from '@/components/ui/Freelance.astro'
+import Projects from '@/components/ui/Projects.astro'
 import Skills from '@/components/ui/Skills.astro'
-import ArticleList from '@/components/ui/ArticleList.astro'
 
 const { fullName, title, } = profile
 
@@ -28,13 +25,13 @@ description="Hi! I'm Solange — a passionate freelance full-stack web developer
 	</section>
 
 	<!-- Skills Technologies -->
-	<section class="py-12">
+	<section class="py-6">
 		<Skills />
 	</section>
 
-	<!-- Freelance Work -->
-	<section class='py-12'>
-		<Freelance title='Freelance Work' freelanceWork={freelanceWork} />
+	<!-- Projects -->
+	<section class='py-6'>
+		<Projects title='Projects' projects={projects} />
 		
 	</section>
 

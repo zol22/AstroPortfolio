@@ -2,10 +2,27 @@
 import Layout from "@/layouts/Layout.astro";
 import { profile } from "@/settings";
 import BetterIcon from "@/components/ui/BetterIcon.astro";
+import Projects from "@/components/ui/Projects.astro";
+import { projects } from "@/data/projects";
 
 ---
 
-<Layout title="Projects | Solange Ormeno">
+<Layout title="Solange Ormeno | Projects" description="Explore a collection of web development projects by Solange Ormeno — from freelance work to full-stack applications built with modern technologies like React, Astro, and Tailwind CSS.">
+    <section>
+		<h1 class='text-4xl font-bold mb-4'>
+            What I've beeing building
+		</h1>
+		<p class='text-lg'>
+            Every project here tells a bit of my journey — learning, building, and bringing ideas to life. From custom websites to full-stack apps, this is what I love doing.
+        </p>
+	</section>
+
+    <!-- Projects -->
+	<section class='py-5'>
+		<Projects title='Projects' projects={projects} />
+		
+	</section>
+
   
 
 </Layout>

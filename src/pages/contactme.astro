@@ -1,0 +1,43 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import CuteCharacter from '@/components/ui/CuteCharacter.astro';
+import { Image } from 'astro:assets'
+import animatedSol from '@/assets/images/animatedSol.png'
+import {social} from '@/settings'
+---
+
+<Layout title="Solange Ormno | Contact Me">
+
+    <section class='flex flex-col md:flex-row items-center  justify-between gap-10 px-6 py-12  mx-auto border-b '>
+		<div class="flex-1 text-center md:text-left">
+            <h1 class='text-4xl font-bold mb-4'>
+                Get in Touch!
+            </h1>
+            <p class='text-lg mb-6'>
+                Have a question, project idea, or collaboration in mind? I’d love to hear from you!
+            </p>
+            <a href={social.linkedin} target="_blank" rel="noopener noreferrer" >
+                <button type="button" class=" text-white bg-secondary hover:bg-secondary/70 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Let's Talk</button>
+
+            </a>
+        </div>
+            
+        <div class="md:size-96 size-52">
+            <Image 
+                src={animatedSol}
+                alt="Solange Ormeno"
+                class="w-full h-full size-44"
+                loading="lazy"
+                widths={[400, 800, 1200]}  // Astro will generate these sizes
+                sizes="(max-width: 768px) 100vw, 50vw"
+            />
+        </div>
+	</section>
+
+        <!-- 👇 This ensures the script runs in the browser -->
+        <script src="/scripts/eyeTracker.js" defer></script>
+ 
+</Layout>
+
+
+

@@ -1,0 +1,24 @@
+.eye-tracker {
+  position: relative;
+}
+
+.eye-ball {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #e2e8f0; /* Soft gray eye */
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.pupil {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: transform 0.1s ease;
+}

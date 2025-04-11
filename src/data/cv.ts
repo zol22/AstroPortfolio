@@ -2,7 +2,7 @@ export const experiences = [
 	{
 		company: 'Self Employed',
 		time: '2022 - Present',
-		title: 'Freelancer - Web Developer& Designer',
+		title: 'Freelancer - Web Developer & Designer',
 		location: 'Remote',
 		description: `Designed and built websites for small businesses using Squarespace, Wix, and custom code.`,
 	},
@@ -16,7 +16,7 @@ export const experiences = [
 	{
 		company: 'Yofimed',
 		time: '2020',
-		title: 'QUX/UI Designer',
+		title: 'UX/UI Designer',
 		location: 'Manhattan, NY',
 		description: `Designed an iOS app for medical providers, improving user flow and engagement.`
 	}
@@ -105,23 +105,4 @@ export const skills = [
 		title: 'SquareSpace',
 		logo: 'bx bxl-squarespace',
 	},
-];
-
-export const publications = [
-	{
-		title: '',
-		authors: '',
-		journal: '',
-		time: '',
-		link: '',
-		abstract: '',
-	},
-	// {
-	// 	title: 'The Radiation of Uranium Compounds',
-	// 	authors: 'Marie Curie',
-	// 	journal: 'Comptes Rendus de l’Académie des Sciences',
-	// 	time: '1898',
-	// 	link: '#',
-	// 	abstract: 'Early research leading to the identification of uranium’s radioactive properties.',
-	// },
 ];
