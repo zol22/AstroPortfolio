@@ -9,6 +9,8 @@ import carDealer from '../assets/images/carDealer.png';
 import NGO from '../assets/images/NGO.png';
 import NGOInfo from '../assets/images/NGOInfo.png';
 import NGOInfo2 from '../assets/images/NGOInfo2.png';
+import NGOHomepage from '../assets/images/NGOHomepage.png';
+
 
 import jobsy from '../assets/images/jobsy.png';
 import jobsyHomepage from '../assets/images/jobsyHomepage.png';
@@ -21,7 +23,6 @@ import piscoMixersInfo2 from '../assets/images/piscoMixersInfo2.png';
 import visionboard from '../assets/images/visionboard.png';
 import visionboardHomepage from '../assets/images/visionboardHomepage.png';
 
-import NGOHomepage from '../assets/images/NGOHomePage.png';
 
 import choreTracker from '../assets/images/choreTracker.jpg';
 
