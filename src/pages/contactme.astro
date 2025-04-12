@@ -1,14 +1,15 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import CuteCharacter from '@/components/ui/CuteCharacter.astro';
 import { Image } from 'astro:assets'
 import animatedSol from '@/assets/images/animatedSol.png'
 import {social} from '@/settings'
+import CuteCharacter from '@/components/ui/CuteCharacter.astro'
+import Hire from '@/components/ui/Hire.astro'
 ---
 
-<Layout title="Solange Ormno | Contact Me">
+<Layout title="Solange Ormeno | Contact Me">
 
-    <section class='flex flex-col md:flex-row items-center  justify-between gap-10 px-6 py-12  mx-auto border-b '>
+    <section class='flex flex-col md:flex-row items-center  justify-between gap-10 p-6  mx-auto border-b '>
 		<div class="flex-1 text-center md:text-left">
             <h1 class='text-4xl font-bold mb-4'>
                 Get in Touch!
@@ -33,10 +34,8 @@ import {social} from '@/settings'
             />
         </div>
 	</section>
+    <Hire />
 
-        <!-- 👇 This ensures the script runs in the browser -->
-        <script src="/scripts/eyeTracker.js" defer></script>
- 
 </Layout>
 
 

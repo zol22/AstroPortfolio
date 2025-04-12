@@ -6,11 +6,11 @@ export default {
             keyframes: {
                 scroll: {
                     "0%": { transform: "translateX(0%)" },
-                    "100%": { transform: "translateX(-50%)" },
+                    "80%": { transform: "translateX(-50%)" },
                 },
             },
             animation: {
-                'scroll-slow': "scroll 30s linear infinite",
+                'scroll': "scroll 30s linear infinite",
             },
         },
     },

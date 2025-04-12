@@ -1,6 +1,6 @@
 ---
 import ProjectCard from '@/components/ui/ProjectCard.astro';
-
+import CuteCharacter from '@/components/ui/CuteCharacter.astro';
 interface Props {
   title: string;
   projects: {
@@ -31,6 +31,8 @@ const sortedProjects = [...projects].sort((a, b) => {
   return dateB - dateA; // Sort in descending order
 });
 ---
+<CuteCharacter />
+
 <h2 class="text-2xl font-bold mb-10 mt-2 border-b pb-2">{title}</h2>
 
 <div>
@@ -42,3 +44,5 @@ const sortedProjects = [...projects].sort((a, b) => {
     ))}
   </div>
 </div>
+  <!-- 👇 This ensures the script runs in the browser -->
+  <script src="/scripts/eyeTracker.js" defer></script>
